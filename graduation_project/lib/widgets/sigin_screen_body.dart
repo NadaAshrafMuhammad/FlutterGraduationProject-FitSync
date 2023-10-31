@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/widgets/custom_text_button.dart';
+import 'package:graduation_project/screen/register_screen.dart';
+import '../helper/navigation.dart';
+import 'custom_text_button.dart';
 import 'custom_button.dart';
 import 'custom_text_form_field.dart';
 
@@ -15,11 +17,11 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: [
-        Text(
+        const Text(
           'Signin',
           style: TextStyle(
             fontSize: 60,
@@ -27,28 +29,34 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
             fontWeight: FontWeight.bold,
           ),
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         // text form field of user email
-        CustomTextFormField(
+        const CustomTextFormField(
           labelText: 'Email',
           prefixIcon: Icons.email,
           keyboardType: TextInputType.emailAddress,
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         // text form field of password
-        CustomTextFormField(
+        const CustomTextFormField(
           labelText: 'password',
           prefixIcon: Icons.email,
           keyboardType: TextInputType.emailAddress,
         ),
-        SizedBox(height: 50),
-        CustomButton(text: 'Signin'),
+        const SizedBox(height: 50),
+        const CustomButton(text: 'Signin'),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Have No Account'),
+            const Text('Have No Account'),
             // Text button which will navigate to the register screen
-            CustomTextButton(text: 'Register'),
+            CustomTextButton(
+              text: 'Register',
+              onPressed: () {
+                // class was created in helper folder
+                Navigation.pushNavigation(context, screen: const RegisterScreen());
+              },
+            ),
           ],
         ),
       ],
