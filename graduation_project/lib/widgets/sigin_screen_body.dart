@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:graduation_project/widgets/custom_text_button.dart';
 import 'custom_button.dart';
 import 'custom_text_form_field.dart';
 
@@ -42,6 +43,13 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
         ),
         SizedBox(height: 50),
         CustomButton(text: 'Signin'),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Have No Account'),
+            CustomTextButton(text: 'Register'),
+          ],
+        ),
       ],
     );
   }
