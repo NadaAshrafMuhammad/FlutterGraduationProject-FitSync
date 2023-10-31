@@ -47,6 +47,7 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Have No Account'),
+            // Text button which will navigate to the register screen
             CustomTextButton(text: 'Register'),
           ],
         ),
