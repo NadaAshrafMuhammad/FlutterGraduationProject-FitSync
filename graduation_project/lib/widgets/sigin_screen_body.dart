@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'custom_button.dart';
 import 'custom_text_form_field.dart';
 
 class SiginInScreenBody extends StatefulWidget {
@@ -39,6 +40,8 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
           prefixIcon: Icons.email,
           keyboardType: TextInputType.emailAddress,
         ),
+        SizedBox(height: 50),
+        CustomButton(text: 'Signin'),
       ],
     );
   }
