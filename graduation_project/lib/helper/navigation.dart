@@ -5,13 +5,8 @@ class Navigation {
     Navigator.push(
       context,
       PageRouteBuilder(
-        pageBuilder: (
-          _, // this is the context place but we do not need it
-          Animation<double> animation,
-          Animation<double> secondaryAnimation,
-        ) => screen,
         transitionsBuilder: (
-          _, 
+          BuildContext context, 
           Animation<double> animation, 
           Animation<double> secondaryAnimation, 
           child, // this is the screen  which we will navigate to
@@ -24,6 +19,12 @@ class Navigation {
           ),
           child: child,
         ),
+        pageBuilder: (
+          BuildContext context,
+          Animation<double> animation,
+          Animation<double> secondaryAnimation,
+        ) => screen,
+        transitionDuration: const Duration(milliseconds: 500),
       ),
     );
   }
