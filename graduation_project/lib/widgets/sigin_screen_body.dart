@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/screen/register_screen.dart';
+import '../screen/register_screen.dart';
+import 'custom_social_media_icons.dart';
 import '../helper/navigation.dart';
 import 'custom_text_button.dart';
 import 'custom_button.dart';
@@ -21,6 +22,7 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
       mainAxisAlignment: MainAxisAlignment.center,
       mainAxisSize: MainAxisSize.max,
       children: [
+        const Spacer(flex: 2),
         const Text(
           'Signin',
           style: TextStyle(
@@ -64,6 +66,17 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
             ),
           ],
         ),
+        const Spacer(),
+        // this section is the social media icons 
+        CustomSocialMediaIcons(
+          onPressedGoogle: (){
+            // TODO here will signin using google account
+          }, 
+          onPressedFacebook: (){
+            // TODO here will signin using facebook account
+          },
+        ),
+        const Spacer(),
       ],
     );
   }
