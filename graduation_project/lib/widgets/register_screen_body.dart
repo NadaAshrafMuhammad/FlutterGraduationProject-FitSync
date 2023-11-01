@@ -1,19 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/screen/register_screen.dart';
-import '../helper/navigation.dart';
-import 'custom_text_button.dart';
 import 'custom_button.dart';
 import 'custom_text_form_field.dart';
 
-class SiginInScreenBody extends StatefulWidget {
-  const SiginInScreenBody({super.key});
-
-  @override
-  State<SiginInScreenBody> createState() => _SiginInScreenBodyState();
-}
-
-class _SiginInScreenBodyState extends State<SiginInScreenBody> {
-  final focusNode = FocusNode();
+class RegisterScreenBody extends StatelessWidget {
+  const RegisterScreenBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +12,7 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
       mainAxisSize: MainAxisSize.max,
       children: [
         const Text(
-          'Signin',
+          'Register',
           style: TextStyle(
             fontSize: 60,
             color: Colors.purple,
@@ -37,6 +27,12 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
           keyboardType: TextInputType.emailAddress,
         ),
         const SizedBox(height: 20),
+        // text form field of username
+        const CustomTextFormField(
+          labelText: 'Username',
+          prefixIcon: Icons.person,
+        ),
+        const SizedBox(height: 20),
         // text form field of password
         const CustomTextFormField(
           labelText: 'Password',
@@ -45,24 +41,10 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
         ),
         const SizedBox(height: 50),
         CustomButton(
-          text: 'Signin',
-          onPressed: (){
-            // TODO here add function for signin screen 
+          text: 'Register',
+          onPressed: () {
+            // TODO here add function for register screen
           },
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Have No Account'),
-            // Text button which will navigate to the register screen
-            CustomTextButton(
-              text: 'Register',
-              onPressed: () {
-                // class was created in helper folder
-                Navigation.pushNavigation(context, screen: const RegisterScreen());
-              },
-            ),
-          ],
         ),
       ],
     );
