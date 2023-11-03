@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604220766761",
+    "project_id": "fitsync-618aa",
+    "storage_bucket": "fitsync-618aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604220766761:android:72efb068675a8463253a38",
+        "android_client_info": {
+          "package_name": "com.example.graduation_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_7yYzvVXt9xiu3-OagOnyu1EmtHNjjNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
