@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 
+
 class CustomSocialMediaIcons extends StatelessWidget {
   final Function onPressedGoogle;
   final Function onPressedFacebook;
