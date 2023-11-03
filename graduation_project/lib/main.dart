@@ -3,13 +3,12 @@ import 'package:flutter/services.dart';
 import '../screen/signin_screen.dart';
 
 void main() {
-  
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]).then((_) => runApp(const MyApp()));
-
+  
   runApp(const MyApp());
 }
 
