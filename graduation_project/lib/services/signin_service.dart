@@ -2,17 +2,20 @@ import '../helper/api.dart';
 
 class SigninService {
   
-  Future<dynamic> userSignin({
+  Future<String> userSignin({
     required String email, 
     required String password,
   }) async {
 
     var data = await Api().post(
-      url: '', // add url here
+      url: 'https://fitsync.onrender.com/api/user/login',
       body: {"email": email, "password": password},
-      headers: null,
+      headers: {
+        "Content-Type": "application/json"
+      },
     );
-
-    return data;
+    
+    // Will return the token of the user 
+    return data['token']; 
   }
 }

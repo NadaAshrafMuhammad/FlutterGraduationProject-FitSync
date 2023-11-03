@@ -48,7 +48,7 @@ class _SiginInScreenBodyState extends State<SiginInScreenBody> {
         const SizedBox(height: 50),
         CustomButton(
           text: 'Signin',
-          onPressed: (){
+          onPressed: () {
             // TODO here add function for signin screen 
           },
         ),

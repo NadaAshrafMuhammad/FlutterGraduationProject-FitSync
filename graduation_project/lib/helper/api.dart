@@ -4,11 +4,14 @@ import 'package:http/http.dart' as http;
 
 class Api {
   // Is get method to recieve response from the api
-  Future<dynamic> get(String url) async {
+  Future<dynamic> get({
+    required String url, 
+    @required dynamic headers, // optional parameter
+  }) async {
     try {
-      http.Response response = await http.get(Uri.parse(url));
+      http.Response response = await http.get(Uri.parse(url), headers: headers);
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         return jsonDecode(response.body);
       } else {
         // if the statusCode not equal 200 then show me the error messsage
@@ -34,7 +37,7 @@ class Api {
         body: jsonEncode(body),
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         return jsonDecode(response.body);
       } else {
         // if the statusCode not equal 200 then show me the error messsage
@@ -60,7 +63,7 @@ class Api {
         body: jsonEncode(body),
       );
 
-      if (response.statusCode == 200) {
+      if (response.statusCode == 200 || response.statusCode == 201) {
         return jsonDecode(response.body);
       } else {
         // if the statusCode not equal 200 then show me the error messsage

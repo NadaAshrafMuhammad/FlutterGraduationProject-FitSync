@@ -8,7 +8,7 @@ void main() {
     DeviceOrientation.portraitDown,
     DeviceOrientation.portraitUp,
   ]).then((_) => runApp(const MyApp()));
-  
+
   runApp(const MyApp());
 }
 
