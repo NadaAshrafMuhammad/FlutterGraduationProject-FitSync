@@ -50,14 +50,14 @@ class Api {
     }
   }
 
-  // Is put method to send request for update the data in database and recieve response from the api
-  Future<dynamic> put({
+  // Is patch method to send request for update the data in database and recieve response from the api
+  Future<dynamic> patch({
     required String url,
     required Map<String, dynamic> body,
     @required dynamic headers, // optional parameter
   }) async {
     try {
-      http.Response response = await http.put(
+      http.Response response = await http.patch(
         Uri.parse(url),
         headers: headers,
         body: jsonEncode(body),

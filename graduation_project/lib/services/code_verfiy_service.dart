@@ -1,6 +1,6 @@
-import 'package:graduation_project/helper/api.dart';
+import '../helper/api.dart';
 
-class CodeVerfiy {
+class CodeVerfiyService {
   Future<String> sendCodeVerfiy(String token) async {
     var data = await Api().get(
       url: 'https://fitsync.onrender.com/api/user/sendCodeVerfiy',
@@ -8,7 +8,7 @@ class CodeVerfiy {
         "Authorization": "Bearer $token",
       },
     );
-
+    
     // Will return successed message
     return data['message'];
   }
