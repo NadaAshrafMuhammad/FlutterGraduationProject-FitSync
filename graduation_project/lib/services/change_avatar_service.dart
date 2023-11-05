@@ -2,7 +2,7 @@ import '../helper/baseurl.dart';
 import '../helper/api.dart';
 
 class ChangeAvatarService {
-  void changeAvatar(String token, String imagePath) async {
+  void changeAvatar({required String token, required String imagePath}) async {
     var data = await Api().patch(
       url: '$baseUrl/api/user/changeAvatar',
       body: {
@@ -14,7 +14,7 @@ class ChangeAvatarService {
             "multipart/form-data; boundary=<calculated when request is sent>"
       },
     );
-    
+
     // not sure TODO ask what will return
     return data;
   }
