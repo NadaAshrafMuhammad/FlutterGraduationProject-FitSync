@@ -11,13 +11,7 @@ class Api {
     try {
       http.Response response = await http.get(Uri.parse(url), headers: headers);
 
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        return jsonDecode(response.body);
-      } else {
-        // if the statusCode not equal 200 then show me the error messsage
-        throw Exception(
-            'The statusCode: ${response.statusCode} with Error ${response.body}');
-      }
+      return jsonDecode(response.body); 
     } catch (error) {
       // if there problem in api itself this will show
       throw Exception('There Is An Error Which Is: $error');
@@ -37,13 +31,7 @@ class Api {
         body: jsonEncode(body),
       );
 
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        return jsonDecode(response.body);
-      } else {
-        // if the statusCode not equal 200 then show me the error messsage
-        throw Exception(
-            'The statusCode: ${response.statusCode} with Error ${response.body}');
-      }
+      return jsonDecode(response.body);   
     } catch (error) {
       // if there problem in api itself this will show
       throw Exception('There Is An Error Which Is: $error');
@@ -63,13 +51,7 @@ class Api {
         body: jsonEncode(body),
       );
 
-      if (response.statusCode == 200 || response.statusCode == 201) {
-        return jsonDecode(response.body);
-      } else {
-        // if the statusCode not equal 200 then show me the error messsage
-        throw Exception(
-            'The statusCode: ${response.statusCode} with Error ${response.body}');
-      }
+      return jsonDecode(response.body);
     } catch (error) {
       // if there problem in api itself this will show
       throw Exception('There Is An Error Which Is: $error');

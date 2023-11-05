@@ -7,8 +7,8 @@ class SigninScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // When tap any place on the screen the keyboard will dismiss 
+      onTap: () async {
+        // When tap any place on the screen the keyboard will dismiss
         FocusManager.instance.primaryFocus?.unfocus();
       },
       child: const Scaffold(
