@@ -23,7 +23,7 @@ class RegisterService {
     );
 
     // Will assign the data of the user in userData
-    final userData = UserModel.fromJSON(data['user']);
+    UserModel userData = UserModel.fromJSON(data['user']);
     // Save all the data that we recieved
     final recievedData = {
       "userData": userData,

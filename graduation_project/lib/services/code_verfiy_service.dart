@@ -8,17 +8,17 @@ class CodeVerfiyService {
         "Authorization": "Bearer $token",
       },
     );
-    
+
     // Will return successed message
     return data['message'];
   }
 
   Future<String> resetCodeVerfiy(String code) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/codeReset', 
+      url: 'https://fitsync.onrender.com/api/user/codeReset',
       body: {
         "code": code,
-      }, 
+      },
       headers: {
         "Content-Type": "application/json",
       },
@@ -30,16 +30,16 @@ class CodeVerfiyService {
 
   Future<String> confirmCodeVerfiy(String token, String code) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/verfiy', 
+      url: 'https://fitsync.onrender.com/api/user/verfiy',
       body: {
         "code": code,
-      }, 
+      },
       headers: {
         "Authorization": "Bearer $token",
       },
     );
     
-    // not sure TODO ask what will return
-    return data;
+    // Will return token if it not empty else will return messge
+    return data['token'] ?? data['message'];
   }
 }
