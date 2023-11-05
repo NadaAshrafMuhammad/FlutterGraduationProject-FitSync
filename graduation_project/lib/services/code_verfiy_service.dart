@@ -1,9 +1,10 @@
 import '../helper/api.dart';
+import '../helper/baseUrl.dart';
 
 class CodeVerfiyService {
   Future<String> sendCodeVerfiy(String token) async {
     var data = await Api().get(
-      url: 'https://fitsync.onrender.com/api/user/sendCodeVerfiy',
+      url: '$baseUrl/api/user/sendCodeVerfiy',
       headers: {
         "Authorization": "Bearer $token",
       },
@@ -15,7 +16,7 @@ class CodeVerfiyService {
 
   Future<String> resetCodeVerfiy(String code) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/codeReset',
+      url: '$baseUrl/api/user/codeReset',
       body: {
         "code": code,
       },
@@ -30,7 +31,7 @@ class CodeVerfiyService {
 
   Future<String> confirmCodeVerfiy(String token, String code) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/verfiy',
+      url: '$baseUrl/api/user/verfiy',
       body: {
         "code": code,
       },

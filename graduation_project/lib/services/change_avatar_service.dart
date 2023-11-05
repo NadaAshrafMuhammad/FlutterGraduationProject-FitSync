@@ -1,9 +1,10 @@
+import '../helper/baseUrl.dart';
 import '../helper/api.dart';
 
 class ChangeAvatarService {
   void changeAvatar(String token, String imagePath) async {
     var data = await Api().patch(
-      url: 'https://fitsync.onrender.com/api/user/changeAvatar',
+      url: '$baseUrl/api/user/changeAvatar',
       body: {
         "avatar": imagePath,
       },

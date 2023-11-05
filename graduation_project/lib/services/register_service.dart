@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../helper/baseUrl.dart';
 import '../models/user_model.dart';
 import '../helper/api.dart';
 
@@ -10,7 +11,7 @@ class RegisterService {
     required String passwordConfirm,
   }) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/register',
+      url: '$baseUrl/api/user/register',
       body: {
         "username": username,
         "email": email,

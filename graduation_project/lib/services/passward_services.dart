@@ -1,9 +1,10 @@
+import '../helper/baseurl.dart';
 import '../helper/api.dart';
 
 class PasswordServices {
   Future<String> forgetPassword(String email) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/forgetPassword',
+      url: '$baseUrl/api/user/forgetPassword',
       body: {"email": email},
       headers: {"Content-Type": "application/json"},
     );
@@ -15,7 +16,7 @@ class PasswordServices {
   Future<String> resetPassword(
       String password, String passwordConf, String token) async {
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/resetPassword',
+      url: '$baseUrl/api/user/resetPassword',
       body: {
         "password": password,
         "passwordConfirm": passwordConf,
@@ -37,7 +38,7 @@ class PasswordServices {
     required String token,
   }) async {
     var data = await Api().patch(
-      url: 'https://fitsync.onrender.com/api/user/updatePassword',
+      url: '$baseUrl/api/user/updatePassword',
       body: {
         "oldPassword": oldPassword,
         "password": password,

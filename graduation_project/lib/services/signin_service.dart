@@ -1,3 +1,4 @@
+import '../helper/baseurl.dart';
 import '../helper/api.dart';
 
 class SigninService {
@@ -8,7 +9,7 @@ class SigninService {
   }) async {
 
     var data = await Api().post(
-      url: 'https://fitsync.onrender.com/api/user/login',
+      url: '$baseUrl/api/user/login',
       body: {"email": email, "password": password},
       headers: {
         "Content-Type": "application/json"
