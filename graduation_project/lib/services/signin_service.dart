@@ -15,7 +15,7 @@ class SigninService {
       },
     );
     
-    // Will return the token of the user 
-    return data['token']; 
+    // Will return the token of the user if is not null else return message
+    return data['token'] ?? data['message']; 
   }
 }
