@@ -2,7 +2,7 @@ import '../helper/baseurl.dart';
 import '../helper/api.dart';
 
 class ChangeAvatarService {
-  void changeAvatar({required String token, required String imagePath}) async {
+  Future<String> changeAvatar({required String token, required String imagePath}) async {
     var data = await Api().patch(
       url: '$baseUrl/api/user/changeAvatar',
       body: {
@@ -10,12 +10,11 @@ class ChangeAvatarService {
       },
       headers: {
         "Authorization": "Bearer $token",
-        "Content-Type":
-            "multipart/form-data; boundary=<calculated when request is sent>"
+        "Content-Type": "multipart/form-data; boundary=<calculated when request is sent>"
       },
     );
 
-    // not sure TODO ask what will return
-    return data;
+    // Will return the a message of success or fail
+    return data['message'];
   }
 }
