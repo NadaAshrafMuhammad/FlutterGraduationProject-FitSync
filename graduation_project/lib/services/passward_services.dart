@@ -37,7 +37,7 @@ class PasswordServices {
     required String token,
   }) async {
     var data = await Api().patch(
-      url: 'https://fitsync.onrender.com/api/user/resetPassword',
+      url: 'https://fitsync.onrender.com/api/user/updatePassword',
       body: {
         "oldPassword": oldPassword,
         "password": password,
