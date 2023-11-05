@@ -1,4 +1,4 @@
-import '../helper/baseUrl.dart';
+import '../helper/baseurl.dart';
 import '../helper/api.dart';
 
 class ChangeAvatarService {
